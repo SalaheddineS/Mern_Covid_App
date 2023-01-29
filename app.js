@@ -23,7 +23,7 @@ app.use(cookieParser("secret"));
 app.use(express.json());
 app.use(bodyParser.json());
 app.use("/uploads", express.static("uploads"));
-app.use(express.static("public"));
+app.use(express.static("build"));
 app.use("/api", route);
 
 app.use(
@@ -67,7 +67,7 @@ app.use(
   admin
 );
 app.use('*',(_,res)=>{
-  res.sendFile(path.join(__dirname,'public','index.html'))
+  res.sendFile(path.join(__dirname,'build','index.html'))
 })
 mongoose.connect(process.env.DB).then(() => {
   app.listen(process.env.PORT);
