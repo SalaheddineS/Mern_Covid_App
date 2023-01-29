@@ -1,0 +1,6 @@
+config.env
+node_modules
+public 
+frontend/build
+frontend/node_modules
+uploads
